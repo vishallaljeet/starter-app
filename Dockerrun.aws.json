@@ -1,0 +1,30 @@
+{
+    "AWSEBDockerrunVersion": 2,
+    "containerDefinitions": [
+        {
+            "essential": true,
+            "image": "493849651063.dkr.ecr.us-east-2.amazonaws.com/nginx",
+            "name": "nginx",
+	    "memory": 256,
+            "portMappings": [
+                {
+                    "containerPort": 80,
+                    "hostPort": 80
+                }
+            ],
+	    "links": [
+                "nodejs"
+            ]
+
+        },
+        {
+            "essential": true,
+            "image": "493849651063.dkr.ecr.us-east-2.amazonaws.com/webserver",
+            "memory": 256,
+	    "name": "nodejs"
+	    
+        }
+    ],
+    "family": "",
+    "volumes": []
+}

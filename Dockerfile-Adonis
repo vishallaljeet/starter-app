@@ -1,0 +1,36 @@
+# build stage
+FROM ubuntu:latest
+USER root
+
+RUN apt-get update
+
+RUN apt -y upgrade
+
+RUN apt-get -y install curl gnupg
+
+RUN curl -sL https://deb.nodesource.com/setup_12.x  | bash -
+
+RUN apt-get -y install nodejs
+
+WORKDIR /app
+
+RUN mkdir -p /test/proj
+
+WORKDIR /test
+
+COPY . .
+
+RUN npm i -g @adonisjs/cli
+
+RUN npm install
+
+COPY .env.example .env
+
+RUN adonis migration:run
+
+RUN adonis seed
+
+EXPOSE 3333
+
+CMD [ "adonis", "serve" ]
+
