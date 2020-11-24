@@ -1,4 +1,3 @@
-# build stage
 FROM ubuntu:latest
 USER root
 
@@ -12,19 +11,15 @@ RUN curl -sL https://deb.nodesource.com/setup_12.x  | bash -
 
 RUN apt-get -y install nodejs
 
-WORKDIR /app
+WORKDIR /var/www/html/
 
-RUN mkdir -p /test/proj
-
-WORKDIR /test
-
-COPY . .
+ADD . /var/www/html/
 
 RUN npm i -g @adonisjs/cli
 
 RUN npm install
 
-COPY .env.example .env
+COPY ./.env.example .env
 
 RUN adonis migration:run
 
@@ -33,4 +28,3 @@ RUN adonis seed
 EXPOSE 3333
 
 CMD [ "adonis", "serve" ]
-
