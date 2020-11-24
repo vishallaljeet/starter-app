@@ -19,4 +19,4 @@ We have 2 Dockerfile
 Dockerfile-Adonis - Ubuntu as base OS on which I tried to create webserver and pushed to ECR "493849651063.dkr.ecr.us-east-2.amazonaws.com/socarproxy
 Dockerfile-Nginx - I have used offical nginx image and same is uploaded to ECR 493849651063.dkr.ecr.us-east-2.amazonaws.com/nodejsproj
 
-Deployed nodejs application on EBS, which can be access http://socartest-env.eba-pnfm2zrh.us-east-2.elasticbeanstalk.com/
+Deployed nodejs application on EBS, which can be access http://socartest-env-1.eba-mcympzna.us-east-2.elasticbeanstalk.com/
