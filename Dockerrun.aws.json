@@ -3,9 +3,9 @@
     "containerDefinitions": [
         {
             "essential": true,
-            "image": "493849651063.dkr.ecr.us-east-2.amazonaws.com/nginx",
+            "image": "493849651063.dkr.ecr.us-east-2.amazonaws.com/proxy_server:latest",
             "name": "nginx",
-	    "memory": 256,
+	    "memory": 128,
             "portMappings": [
                 {
                     "containerPort": 80,
@@ -13,15 +13,15 @@
                 }
             ],
 	    "links": [
-                "nodejs"
+                "app_socar"
             ]
 
         },
         {
             "essential": true,
-            "image": "493849651063.dkr.ecr.us-east-2.amazonaws.com/webserver",
-            "memory": 256,
-	    "name": "nodejs"
+            "image": "493849651063.dkr.ecr.us-east-2.amazonaws.com/nodejsproj:latest",
+            "memory": 128,
+	    "name": "app_socar"
 	    
         }
     ],
