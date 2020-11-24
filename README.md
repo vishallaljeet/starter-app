@@ -3,7 +3,7 @@ Launch server and database instances:
 a. Launch EC2 instances
 b. Launch an RDS instance
 
-adonis-socar.cguth1piedzr.us-east-2.rds.amazonaws.com
+adonis.cguth1piedzr.us-east-2.rds.amazonaws.com
 
 c. Configure Elastic Beanstalk
 d. Ensure that the requisite networking setup is set up as well.
